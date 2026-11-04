@@ -3,9 +3,7 @@ int[] Numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 PrintNumbers("Numbers", Numbers);
 PrintNumbers("Even No", Numbers.Where(X=>IsEven(X)));
-PrintNumbers("Numbers", Numbers.Where(X=>IsOdd(X)));
-
-
+PrintNumbers("Odd No", Numbers.Where(X=>IsOdd(X)));
 
 void PrintNumbers(string Title, IEnumerable<int>Numbers)
 {
@@ -21,17 +19,7 @@ void PrintNumbers(string Title, IEnumerable<int>Numbers)
 
 
 
-bool IsEven(int Number)
-{
-    if (Number % 2 == 0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
+bool IsEven(int Number) => Number % 2 == 0;
 
 
-bool IsOdd(int Number) => Number % 2 != 0;
+bool IsOdd(int Number) => !IsEven(Number);
